@@ -32,6 +32,7 @@ requirements:
     - psutil
     - decorator
     - attrs
+    - typed-ast
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -39,6 +40,7 @@ requirements:
     - psutil
     - decorator
     - attrs
+    - typed-ast
     - libtvm {{ version }}
 
 test:
