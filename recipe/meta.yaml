@@ -14,8 +14,6 @@ build:
   script:
     - cd python
     - {{ PYTHON }} setup.py install -vv
-    - cd ../topi/python
-    - {{ PYTHON }} setup.py install -vv
   skip: true  # [win]
 
 requirements:
@@ -46,7 +44,6 @@ requirements:
 test:
   imports:
     - tvm
-    - topi
 
 about:
   home: https://tvm.apache.org/
