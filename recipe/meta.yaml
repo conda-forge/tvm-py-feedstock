@@ -1,5 +1,5 @@
 {% set name = "tvm-py" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,12 @@ package:
 
 source:
   url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz
-  sha256: e2688526d24242bbf5f3adbc0590b1234c4fd0b7a8f61bd837af6c49e5020713
+  sha256: 84d825f25c9cfc7cf76359c41d4cd6a6dd53fd247f6f280c45268ce6835d2a10
 
 build:
   number: 0
   script:
     - cd python
-    - {{ PYTHON }} setup.py install -vv
-    - cd ../topi/python
     - {{ PYTHON }} setup.py install -vv
   skip: true  # [win]
 
@@ -32,6 +30,7 @@ requirements:
     - psutil
     - decorator
     - attrs
+    - typed-ast
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -39,12 +38,12 @@ requirements:
     - psutil
     - decorator
     - attrs
+    - typed-ast
     - libtvm {{ version }}
 
 test:
   imports:
     - tvm
-    - topi
 
 about:
   home: https://tvm.apache.org/
