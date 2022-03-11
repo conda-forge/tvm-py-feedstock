@@ -24,6 +24,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}  # [not osx]
     - {{ compiler('c') }}  # [not osx]
+    - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
   host:
     - libtvm {{ version }}
     - python
