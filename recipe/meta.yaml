@@ -59,7 +59,6 @@ test:
   commands:
    - pip check
    - python -m pytest -v tests/python/all-platform-minimal-test
-   - python -m pytest -v tests/python/unittest
 
 about:
   home: https://tvm.apache.org/
