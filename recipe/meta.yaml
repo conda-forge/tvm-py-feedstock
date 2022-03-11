@@ -45,17 +45,16 @@ requirements:
     - attrs
     - typed-ast
     - libtvm =={{ version }}=*{{ proc_type }}*
-    # temporary measures
     - llvmdev ==13
-    _ __cuda  # [cuda_compiler_version != "None"]
+    - __cuda  # [cuda_compiler_version != "None"]
 
 test:
-  requires:
-    - pip
-  commands:
-    - pip check
   imports:
     - tvm
+  requires:
+   - pip
+  commands:
+   - pip check
 
 about:
   home: https://tvm.apache.org/
