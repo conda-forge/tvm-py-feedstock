@@ -10,7 +10,7 @@ source:
   sha256: 84d825f25c9cfc7cf76359c41d4cd6a6dd53fd247f6f280c45268ce6835d2a10
 
 build:
-  number: 1
+  number: 2
   script:
     - cd python
     - {{ PYTHON }} setup.py install -vv
