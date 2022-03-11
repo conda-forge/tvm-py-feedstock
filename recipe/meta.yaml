@@ -26,8 +26,8 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('cxx') }}  # [not osx]
-    - {{ compiler('c') }}  # [not osx]
+    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
     - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
   host:
     - libtvm =={{ version }}=*{{ proc_type }}*
