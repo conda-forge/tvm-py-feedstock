@@ -14,7 +14,7 @@ build:
   number: 1
   script:
     - cd python
-    - {{ PYTHON }} -m pip install . -vv --no-deps
+    - {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
   skip: true  # [cuda_compiler_version in ("10.2", "11.0", "11.1")]
   string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}_{{ proc_type }}  # [cuda_compiler_version == "None"]
