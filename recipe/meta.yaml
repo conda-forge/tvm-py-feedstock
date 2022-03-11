@@ -53,8 +53,12 @@ test:
     - tvm
   requires:
    - pip
+   - pytest
+  source_files:
+    - tests
   commands:
    - pip check
+   - python -m pytest -v tests/python/all-platform-minimal-test
 
 about:
   home: https://tvm.apache.org/
