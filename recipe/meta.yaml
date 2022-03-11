@@ -50,6 +50,7 @@ requirements:
     - __cuda  # [cuda_compiler_version != "None"]
     - cloudpickle
     - tornado
+    - synr
 
 test:
   imports:
