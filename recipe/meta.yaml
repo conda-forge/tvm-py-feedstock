@@ -48,6 +48,8 @@ requirements:
     - libtvm =={{ version }}=*{{ proc_type }}*
     - llvmdev ==13
     - __cuda  # [cuda_compiler_version != "None"]
+    - cloudpickle
+    - tornado
 
 test:
   imports:
