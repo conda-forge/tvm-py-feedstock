@@ -22,8 +22,12 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }}  # [not osx]
-    - {{ compiler('c') }}  # [not osx]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
     - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
   host:
     - libtvm =={{ version }}=*{{ proc_type }}*
