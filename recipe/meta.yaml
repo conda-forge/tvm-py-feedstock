@@ -26,7 +26,7 @@ requirements:
     - {{ compiler('c') }}  # [not osx]
     - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
   host:
-    - libtvm {{ version }}
+    - libtvm =={{ version }}=*{{ proc_type }}*
     - python
     - cython
     - numpy
@@ -44,9 +44,11 @@ requirements:
     - decorator
     - attrs
     - typed-ast
-    - libtvm {{ version }}
+    - libtvm =={{ version }}=*{{ proc_type }}*
 
 test:
+  requires:
+    - llvmdev
   imports:
     - tvm
 
