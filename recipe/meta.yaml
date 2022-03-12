@@ -11,7 +11,7 @@ source:
   sha256: d950c5d159c1345d0727dfb3cabb456e6947a8cb80519feaeed8e0b35e6e913e
 
 build:
-  number: 2
+  number: 3
   script:
     - cd python
     - {{ PYTHON }} -m pip install . -vv
@@ -54,6 +54,7 @@ requirements:
     - cloudpickle
     - tornado
     - synr  ==0.5.0
+    - pytest
 
 test:
   imports:
