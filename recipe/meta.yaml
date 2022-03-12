@@ -11,7 +11,7 @@ source:
   sha256: d950c5d159c1345d0727dfb3cabb456e6947a8cb80519feaeed8e0b35e6e913e
 
 build:
-  number: 1
+  number: 2
   script:
     - cd python
     - {{ PYTHON }} -m pip install . -vv
@@ -29,7 +29,6 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-
   host:
     - libtvm =={{ version }}=*{{ proc_type }}*
     - python
