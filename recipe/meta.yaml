@@ -58,7 +58,7 @@ requirements:
 
 test:
   imports:
-    - tvm  # [not osx]
+    - tvm
   requires:
    - pip
    - pytest
