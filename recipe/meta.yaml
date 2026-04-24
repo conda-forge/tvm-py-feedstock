@@ -1,5 +1,5 @@
 {% set name = "tvm-py" %}
-{% set version = "0.8.0" %}
+{% set version = "0.11.1" %}
 {% set proc_type = "cuda" if cuda_compiler_version != "None" else "cpu" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz
-  sha256: d950c5d159c1345d0727dfb3cabb456e6947a8cb80519feaeed8e0b35e6e913e
+  sha256: 5a15cc16362cbd5d9daec2c4183193e2cefc0a7e1016e99724058d26d64bcf38
 
 build:
-  number: 4
+  number: 0
   script:
     - cd python
     - {{ PYTHON }} -m pip install . -vv
@@ -61,13 +61,13 @@ test:
   imports:
     - tvm
   requires:
-   - pip
-   - pytest
+    - pip
+    - pytest
   source_files:
     - tests
   commands:
-   - pip check
-   - python -m pytest -v tests/python/all-platform-minimal-test
+    - pip check
+    - python -m pytest -v tests/python/all-platform-minimal-test
 
 about:
   home: https://tvm.apache.org/
